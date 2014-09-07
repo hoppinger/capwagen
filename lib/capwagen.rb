@@ -74,6 +74,10 @@ module Capwagen
           run "#{try_sudo} mkdir -p #{dirs.join(' ')}"
           run "#{try_sudo} chmod g+w #{dirs.join(' ')}" if fetch(:group_writable, true)
         end
+
+        # capistrano takes care of rolling back directories on failure
+        # only thing left to do is taking drupal out of maintenance mode
+        after :rollback, "drupal:online"
       end
 
       # The Drupal namespace contains the commands for Drupal that is not specific
