@@ -77,7 +77,7 @@ module Capwagen
 
         # capistrano takes care of rolling back directories on failure
         # only thing left to do is taking drupal out of maintenance mode
-        after :rollback, "drupal:online"
+        after "deploy:failed", "drupal:online"
       end
 
       # The Drupal namespace contains the commands for Drupal that is not specific

@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.bindir       = "bin"
   spec.executables << "capwagen"
 
-  spec.add_dependency 'capistrano', "~> 2.14.2"
+  spec.add_dependency 'capistrano', "~> 3.1.0"
 
   spec.authors      = [ "Rolf van de Krol" ]
   spec.email        = [ "info AT rolfvandekrol DOT com" ]
